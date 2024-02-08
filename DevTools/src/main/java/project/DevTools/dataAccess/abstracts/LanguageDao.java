@@ -1,11 +1,9 @@
 package project.DevTools.dataAccess.abstracts;
 
-import java.util.List;
-
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import project.DevTools.entities.concretes.Language;
 
-public interface LanguageDao{
-	List<Language> getall();
-	Language getById(int id);
+public interface LanguageDao extends JpaRepository<Language, Integer>{
+	
 }

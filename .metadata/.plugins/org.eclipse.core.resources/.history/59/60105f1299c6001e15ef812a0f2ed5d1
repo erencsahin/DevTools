@@ -1,0 +1,62 @@
+package project.DevTools.business.concretes;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import project.DevTools.business.abstracts.LanguageService;
+import project.DevTools.business.requests.CreateLanguageRequest;
+import project.DevTools.business.responses.GetAllLanguageResponse;
+import project.DevTools.dataAccess.abstracts.LanguageDao;
+import project.DevTools.entities.concretes.Language;
+
+@Service
+public class LanguageManager implements LanguageService{
+	private LanguageDao languageDao;
+	
+	@Autowired
+	public LanguageManager(LanguageDao languageDao) 
+	{
+		this.languageDao=languageDao;
+	}
+
+	
+	@Override
+	public List<GetAllLanguageResponse> getAll() {
+		List<Language> languages= languageDao.findAll();
+		List<GetAllLanguageResponse> languageResponse = new ArrayList<GetAllLanguageResponse>();
+		
+		for (Language language: languages) {
+			GetAllLanguageResponse responseItem=new GetAllLanguageResponse();
+			responseItem.setId(language.getId());
+			responseItem.setName(language.getName());
+			languageResponse.add(responseItem);
+		}
+		return languageResponse;
+	}
+
+
+	@Override
+	public void Add(CreateLanguageRequest createLanguageRequest) {
+		Language language = new Language();
+		language.setName(createLanguageRequest.getName());
+		
+		this.languageDao.save(language);
+	}
+
+
+	@Override
+	public void Delete(int id) {
+		this.languageDao.deleteById(id);
+	}
+	
+	
+
+	/*@Override
+	public Language getById(int id) {
+		return languageDao.getById(id);
+	}*/
+
+}

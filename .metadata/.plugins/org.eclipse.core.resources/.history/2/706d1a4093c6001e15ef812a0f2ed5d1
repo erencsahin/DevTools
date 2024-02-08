@@ -1,0 +1,8 @@
+package project.DevTools.business.responses;
+
+import lombok.Data;
+
+public class GetAllLanguageResponse {
+	private int id;
+	private String name;
+}

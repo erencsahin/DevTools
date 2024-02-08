@@ -2,9 +2,11 @@ package project.DevTools.business.abstracts;
 
 import java.util.List;
 
-import project.DevTools.entities.concretes.Language;
+import project.DevTools.business.requests.CreateLanguageRequest;
+import project.DevTools.business.responses.GetAllLanguageResponse;
 
 public interface LanguageService {
-	List<Language> getAll();
-	Language getById(int id);
+	List<GetAllLanguageResponse> getAll();
+	void Add(CreateLanguageRequest createLanguageRequest);
+	void Delete(int id);
 }

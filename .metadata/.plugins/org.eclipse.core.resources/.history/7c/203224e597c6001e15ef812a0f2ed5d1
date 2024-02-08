@@ -1,0 +1,5 @@
+package project.DevTools.common.utilities.mappers;
+
+public class ModelMapperManager {
+
+}
