@@ -1,0 +1,16 @@
+package project.DevTools.business.concretes;
+
+import java.util.List;
+
+import project.DevTools.business.abstracts.LanguageService;
+import project.DevTools.entities.concretes.Language;
+
+
+public class LanguageManager implements LanguageService{
+	
+	@Override
+	public List<Language> getAll() {
+		return null;
+	}
+
+}

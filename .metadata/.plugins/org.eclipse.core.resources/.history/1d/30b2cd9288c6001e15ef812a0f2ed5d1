@@ -1,0 +1,5 @@
+package project.DevTools.dataAccess.concretes;
+
+public class InMemoryLanguageDao {
+
+}

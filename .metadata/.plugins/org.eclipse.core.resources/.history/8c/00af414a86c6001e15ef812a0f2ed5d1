@@ -1,0 +1,13 @@
+package project.DevTools.entities.concretes;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Languages {
+	private int id;
+	private String name;
+}

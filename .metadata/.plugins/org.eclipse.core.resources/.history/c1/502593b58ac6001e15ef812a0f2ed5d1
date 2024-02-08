@@ -1,0 +1,12 @@
+package project.DevTools.dataAccess.abstracts;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import project.DevTools.entities.concretes.Language;
+
+@Repository
+public interface LanguageDao{
+	List<Language> getall();
+}

@@ -1,0 +1,25 @@
+package project.DevTools.business.concretes;
+
+import java.util.List;
+
+import project.DevTools.business.abstracts.LanguageService;
+import project.DevTools.dataAccess.abstracts.LanguageDao;
+import project.DevTools.entities.concretes.Language;
+
+
+public class LanguageManager implements LanguageService{
+	
+	private LanguageDao languageDao;
+	
+	public LanguageManager(LanguageDao languageDao) 
+	{
+		this.languageDao=languageDao;
+	}
+
+	
+	@Override
+	public List<Language> getAll() {
+		return languageDao.getall();
+	}
+
+}

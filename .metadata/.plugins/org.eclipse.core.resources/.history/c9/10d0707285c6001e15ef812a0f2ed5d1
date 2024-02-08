@@ -1,0 +1,5 @@
+package project.DevTools.entities.concretes;
+
+public class Languages {
+
+}

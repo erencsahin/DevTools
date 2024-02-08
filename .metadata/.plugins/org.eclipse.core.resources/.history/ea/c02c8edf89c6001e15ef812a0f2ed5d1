@@ -1,0 +1,11 @@
+package project.DevTools.business.abstracts;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import project.DevTools.entities.concretes.Language;
+@Service
+public interface LanguageService {
+	List<Language> getAll();
+}

@@ -1,0 +1,7 @@
+package project.DevTools.dataAccess.abstracts;
+
+import java.util.List;uage;
+
+public interface LanguageDao{
+	List<Language> getall();
+}
