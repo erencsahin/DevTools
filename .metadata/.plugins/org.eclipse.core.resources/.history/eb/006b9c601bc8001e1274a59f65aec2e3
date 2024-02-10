@@ -1,0 +1,15 @@
+package project.DevTools.business.abstracts;
+
+import java.util.List;
+
+import project.DevTools.business.requests.CreateTechRequest;
+import project.DevTools.business.requests.UpdateTechRequest;
+import project.DevTools.business.responses.GetAllTechResponses;
+
+public interface TechService {
+	List<GetAllTechResponses> getAll();
+	GetAllTechResponses GetById(int id);
+	void Add(CreateTechRequest createTechRequest);
+	void Update(UpdateTechRequest updateTechRequest);
+	void Delete(int id);
+}

@@ -1,0 +1,21 @@
+package project.DevTools.webApi.controllers;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import project.DevTools.business.abstracts.TechService;
+import project.DevTools.business.responses.GetAllTechResponses;
+
+@RestController
+@RequestMapping("/api/techs")
+public class TechsController {
+
+	private TechService techService;
+	
+	public List<GetAllTechResponses> getAll()
+	{
+		return techService.getAll();
+	}
+}

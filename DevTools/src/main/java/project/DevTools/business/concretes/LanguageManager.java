@@ -7,7 +7,9 @@ import org.springframework.stereotype.Service;
 import lombok.AllArgsConstructor;
 import project.DevTools.business.abstracts.LanguageService;
 import project.DevTools.business.requests.CreateLanguageRequest;
+import project.DevTools.business.requests.UpdateLanguageRequest;
 import project.DevTools.business.responses.GetAllLanguageResponse;
+import project.DevTools.business.responses.GetByIdLanguageResponses;
 import project.DevTools.common.utilities.mappers.ModelMapperService;
 import project.DevTools.dataAccess.abstracts.LanguageDao;
 import project.DevTools.entities.concretes.Language;
@@ -42,12 +44,21 @@ public class LanguageManager implements LanguageService{
 	public void Delete(int id) {
 		this.languageDao.deleteById(id);
 	}
-	
-	
 
-	/*@Override
-	public Language getById(int id) {
-		return languageDao.getById(id);
-	}*/
 
+	@Override
+	public GetByIdLanguageResponses GetById(int id) {
+		Language lang=  this.languageDao.findById(id).orElseThrow();
+		GetByIdLanguageResponses response = this.mapperService.forResponse()
+				.map(lang, GetByIdLanguageResponses.class);
+		
+		return response;
+	}
+
+
+	@Override
+	public void Update(UpdateLanguageRequest updatelanguageRequest) {
+		Language lang=this.mapperService.forResponse().map(updatelanguageRequest, Language.class);
+		this.languageDao.save(lang);
+	}
 }

@@ -1,0 +1,5 @@
+package project.DevTools.business.responses;
+
+public class GetAllTechResponses {
+
+}

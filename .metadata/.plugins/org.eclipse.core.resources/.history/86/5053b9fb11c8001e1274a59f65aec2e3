@@ -1,0 +1,10 @@
+package project.DevTools.common.utilities.mappers;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface ModelMapperService {
+	ModelMapper forResponse();
+	ModelMapper forRequest();
+}

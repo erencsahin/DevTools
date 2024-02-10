@@ -1,0 +1,19 @@
+package project.DevTools.entities.concretes;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+
+@Table(name="techs")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+public class Tech {
+	private int id;
+	
+	private String name;
+}

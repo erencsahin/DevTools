@@ -1,0 +1,51 @@
+package project.DevTools.business.concretes;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import lombok.AllArgsConstructor;
+import project.DevTools.business.abstracts.TechService;
+import project.DevTools.business.requests.CreateTechRequest;
+import project.DevTools.business.requests.UpdateTechRequest;
+import project.DevTools.business.responses.GetAllTechResponses;
+import project.DevTools.common.utilities.mappers.ModelMapperService;
+import project.DevTools.dataAccess.abstracts.TechDao;
+
+@Service
+@AllArgsConstructor
+public class TechManager implements TechService{
+	private TechDao techDao;
+	private ModelMapperService mapperService;
+	
+	@Override
+	public List<GetAllTechResponses> getAll() {
+		
+		return null;
+	}
+
+	@Override
+	public GetAllTechResponses GetById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void Add(CreateTechRequest createTechRequest) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void Update(UpdateTechRequest updateTechRequest) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void Delete(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
